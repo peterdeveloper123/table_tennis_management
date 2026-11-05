@@ -78,4 +78,4 @@ const server=http.createServer(async(req,res)=>{
  send(res,404,{error:'Nenájdené'});
  }catch(e){send(res,e.status||400,{error:e.status?e.message:'Požiadavku sa nepodarilo spracovať.'});}
 });
-server.listen(Number(process.env.PORT)||3000,process.env.HOST||'127.0.0.1',()=>console.log(`Turnaj: http://localhost:${process.env.PORT||3000}/management\nNáhľad: /preview\n${token?'Administrácia chránená ADMIN_TOKEN.':'Lokálny režim bez hesla. Pred sprístupnením v sieti nastavte ADMIN_TOKEN.'}`));
+server.listen(Number(process.env.PORT)||3000,process.env.HOST||'127.0.0.1',()=>console.log(`Turnaj: http://localhost:${process.env.PORT||3000}/management\nNáhľad: http://localhost:${process.env.PORT||3000}/preview`));
